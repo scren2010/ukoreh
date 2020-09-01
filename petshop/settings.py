@@ -62,7 +62,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-ACCOUNT_AUTHENTICATION_METHOD = "username || email" #new
+ACCOUNT_AUTHENTICATION_METHOD = "username_email" #new
 ACCOUNT_EMAIL_REQUIRED = True #new
 
 MIDDLEWARE = [
