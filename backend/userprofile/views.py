@@ -46,3 +46,12 @@ class ProfileView(APIView):
         return Response(ser.data)
 
 
+from allauth.socialaccount.models import SocialToken
+
+def social_login(self, request):
+    user = request.user
+    token = SocialToken.objects.filter(account__user=user, account__provider='google')
+    print('привет!')
+    print(user)
+    print(token)
+    return Response('КУКУ')

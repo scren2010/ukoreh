@@ -10,5 +10,7 @@ urlpatterns = [
 
 
     path('profile/', views.ProfileView.as_view()),
-    # path('profile-update/', views.ProfileUpdateView.as_view()),
+
+    path('accounts/google/login/', views.social_login)
+
 ]

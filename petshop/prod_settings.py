@@ -1,16 +1,4 @@
 """ Авторизация через социальные сети """
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
-    }
-}
 
 """ Подтверждени по email """
 # ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -18,12 +6,14 @@ SOCIALACCOUNT_PROVIDERS = {
 
 """С эти настройками подстверждение по email не требуеться """
 
+ACCOUNT_ADAPTER = "allauth.account.adapter.DefaultAccountAdapter"
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False
 
+LOGIN_REDIRECT_URL = '/'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_EMAIL_REQUIRED = False
-
 
 """Настройки отправки письма через gmail"""
 """Логин, пороль для почты"""
