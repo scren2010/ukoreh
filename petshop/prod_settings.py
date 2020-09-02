@@ -7,7 +7,8 @@
 """С эти настройками подстверждение по email не требуеться """
 
 ACCOUNT_ADAPTER = "allauth.account.adapter.DefaultAccountAdapter"
-ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False
+
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
 
 LOGIN_REDIRECT_URL = '/'
 
