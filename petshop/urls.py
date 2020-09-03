@@ -19,7 +19,11 @@ from django.urls import path, include
 from rest_framework.documentation import include_docs_urls
 from rest_framework.schemas import get_schema_view
 from rest_framework_swagger.views import get_swagger_view
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from rest_auth.registration.views import SocialLoginView
 
+class GoogleLogin(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter
 
 API_TITLE = 'Pet shop'  # new
 API_DESCRIPTION = 'Моя документация'
@@ -47,5 +51,5 @@ urlpatterns = [
 
     path('swagger-docs/', schema_view),
 
-
+    path('rest-auth/google/', GoogleLogin.as_view())
 ]

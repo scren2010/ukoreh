@@ -51,18 +51,18 @@ class ProfileView(APIView):
 
 from allauth.socialaccount.models import SocialToken
 
-
-
-class TakeToken(APIView):
-    permission_classes = [IsOwnerOrReadOnly]
-    def get(self, request):
-        user = request.user
-        if SocialToken.objects.filter(account__user=user, account__provider='google'):
-            token = SocialToken.objects.filter(account__user=user, account__provider='google')
-            ser = TokenSerializer(token[0])
-            return Response(ser.data)
-        else:
-            token = Token.objects.filter(user=user)
-            ser =  serializers.TokenSerializer(token[0])
-            return Response(ser.data)
+#
+#
+# class TakeToken(APIView):
+#     permission_classes = [IsOwnerOrReadOnly]
+#     def get(self, request):
+#         user = request.user
+#         if SocialToken.objects.filter(account__user=user, account__provider='google'):
+#             token = SocialToken.objects.filter(account__user=user, account__provider='google')
+#             ser = TokenSerializer(token[0])
+#             return Response(ser.data)
+#         else:
+#             token = Token.objects.filter(user=user)
+#             ser =  serializers.TokenSerializer(token[0])
+#             return Response(ser.data)
 

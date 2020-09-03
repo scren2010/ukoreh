@@ -12,8 +12,5 @@ urlpatterns = [
     path('profile/', views.ProfileView.as_view()),
 
 
-    path('profile/token/', views.TakeToken.as_view()),
-
-
 
 ]
