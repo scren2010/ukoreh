@@ -1,3 +1,4 @@
+from allauth.socialaccount.models import SocialToken
 from rest_framework import serializers
 
 from backend.userprofile.models import Profile
@@ -18,3 +19,8 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ('user', 'id', 'picture', 'about', 'avatar')
+
+class TokenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SocialToken
+        fields = ('token',)

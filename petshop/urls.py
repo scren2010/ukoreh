@@ -21,7 +21,6 @@ from rest_framework.schemas import get_schema_view
 from rest_framework_swagger.views import get_swagger_view
 
 
-
 API_TITLE = 'Pet shop'  # new
 API_DESCRIPTION = 'Моя документация'
 
@@ -38,7 +37,6 @@ urlpatterns = [
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
 
     path('accounts/', include('allauth.urls')),
-    # path('accounts/google/login/', include('allauth.urls')),
 
 
     path('api/v1/', include('backend.userprofile.urls')),

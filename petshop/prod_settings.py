@@ -10,7 +10,7 @@ ACCOUNT_ADAPTER = "allauth.account.adapter.DefaultAccountAdapter"
 
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
 
-LOGIN_REDIRECT_URL = '/api/v1/profile/'
+LOGIN_REDIRECT_URL = '/api/v1/profile/token'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
